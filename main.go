@@ -1,10 +1,26 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 
-	// TODO: Tariff table
+	// Tariff table
+
+	type Tariff struct {
+		Cost     byte
+		Duration int64
+	}
+
+	var tariffs = []Tariff{
+		{Cost: 10, Duration: 1000},
+		{Cost: 20, Duration: 3000},
+		{Cost: 30, Duration: 6000},
+		{Cost: 50, Duration: 8000},
+		{Cost: 90, Duration: 9000},
+		{Cost: 80, Duration: 10000},
+	}
 
 	// TODO: Keep program alive and close only on q
 
