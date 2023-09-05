@@ -28,6 +28,15 @@ func main() {
 		if userInput == "q" {
 			break
 		}
+
+		switch userInput {
+		case "a":
+			fmt.Println("Advancing clock...")
+		case "l":
+			fmt.Println("Leave carpark")
+		case "e":
+			fmt.Println("Enter carpark")
+		}
 	}
 
 	// TODO: Advance a clock by x amount of time from user input using "a" or "advance"
@@ -39,7 +48,9 @@ func main() {
 
 func requestUserInput() string {
 	var userInput string
-	fmt.Println("Enter a command: ")
+	fmt.Println("\n---------- Commands ----------")
+	fmt.Println("(q) to quit \n(a) to advance clock \n(l) to leave car park \n(e) to enter car park")
+	fmt.Print("Enter a command: ")
 	fmt.Scan(&userInput)
 	return userInput
 }
