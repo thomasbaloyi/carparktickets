@@ -2,16 +2,19 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
+
+type Tariff struct {
+	Cost     byte
+	Duration int64
+}
 
 func main() {
 
-	// Tariff table
+	var clock time.Time = time.Now()
 
-	type Tariff struct {
-		Cost     byte
-		Duration int64
-	}
+	// Tariff table
 
 	// var tariffs = []Tariff{
 	// 	{Cost: 10, Duration: 1000},
@@ -24,6 +27,9 @@ func main() {
 
 	// Totally new to me, Go does not have a while loop, can be simulated as follows:
 	for {
+		fmt.Print("\nCurrent time: ")
+		fmt.Println(clock.Hour(), clock.Minute(), clock.Second())
+
 		var userInput = requestUserInput()
 		if userInput == "q" {
 			break
@@ -32,6 +38,10 @@ func main() {
 		switch userInput {
 		case "a":
 			fmt.Println("Advancing clock...")
+			var duration = 1 * time.Hour
+			clock = clock.Add(duration)
+			fmt.Print("New time: ")
+			fmt.Println(clock.Hour(), clock.Minute(), clock.Second())
 		case "l":
 			fmt.Println("Leave carpark")
 		case "e":
